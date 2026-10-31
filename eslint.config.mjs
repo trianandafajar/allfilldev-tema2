@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Template sumber (referensi, bukan bagian aplikasi).
+    "foodking-fast-food-restaurant-*/**",
   ]),
 ]);
 
