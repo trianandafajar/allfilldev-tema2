@@ -48,12 +48,12 @@ export function ComboOfferSection({
         <Tabs defaultValue={defaultOffer} className="block gap-0">
           <div className="max-xl:pb-[180px]">
             <div className="grid grid-cols-12 items-center gap-x-6">
-              <div className="col-span-12 xl:col-span-6">
+              <div className="relative z-10 col-span-12 xl:col-span-6">
                 <div className="max-xl:pb-[180px]">
                   <SectionTitle eyebrow={eyebrow}>
                     {title} <TitleAccent>{titleAccent}</TitleAccent>
                   </SectionTitle>
-                  <Reveal as="p" delay={0.5}>
+                  <Reveal as="p" delay={0.5} className="font-medium text-heading">
                     {description}
                   </Reveal>
                   <TabsList

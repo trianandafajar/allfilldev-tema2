@@ -74,7 +74,7 @@ export function ProductCard({
       </button>
 
       <div className="relative z-1 h-[245px]">
-        <SiteImage src={image} alt={imageAlt} className="object-contain" />
+        <SiteImage src={image} alt={imageAlt} className="mx-auto block max-h-full max-w-full object-contain" />
       </div>
 
       <div className="relative z-9 mt-[30px] max-sm:mt-0">

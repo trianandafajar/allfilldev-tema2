@@ -36,12 +36,12 @@ export function ProductListItem({
   orderLabel,
 }: ProductListItemProps) {
   return (
-    <div className="mt-[30px] flex items-center gap-5 rounded-[14px] bg-white p-10 max-lg:flex-wrap max-lg:justify-center">
-      <div className="h-full max-lg:w-[400px] max-lg:text-center lg:max-w-[calc(100%-200px)] lg:min-w-0 lg:max-xl:w-[550px] xl:w-[340px]">
+    <div className="mt-[30px] flex items-center gap-5 rounded-[14px] bg-white p-10 max-lg:flex-wrap max-lg:justify-center md:max-lg:content-start md:max-lg:p-6">
+      <div className="h-full max-lg:w-[400px] max-lg:text-center md:max-lg:h-auto md:max-lg:w-full lg:max-w-[calc(100%-200px)] lg:min-w-0 lg:max-xl:w-[550px] xl:w-[340px]">
         <SiteImage
           src={image}
           alt={imageAlt}
-          className="h-full max-w-full rounded-[18px] object-cover"
+          className="h-full max-w-full rounded-[18px] object-cover md:max-lg:h-auto md:max-lg:w-full"
         />
       </div>
       {/* Basis besar meniru paragraf panjang pada template: kolom gambar menyusut sama di setiap baris. */}

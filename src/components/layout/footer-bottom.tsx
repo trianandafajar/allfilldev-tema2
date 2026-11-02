@@ -1,7 +1,6 @@
 import Link from "next/link"
 import { Container } from "@/components/common/container"
 import { Reveal } from "@/components/common/reveal"
-import { SiteImage } from "@/components/common/site-image"
 import type { LinkItem } from "./types"
 
 type FooterBottomProps = {
@@ -12,30 +11,29 @@ type FooterBottomProps = {
     brandHref: string
     suffix: string
   }
-  /** Tautan hukum (kebijakan privasi, syarat) di bawah hak cipta. */
+  /** Tautan hukum (kebijakan privasi, syarat) di sisi kanan bilah. */
   legalLinks: readonly LinkItem[]
-  payment: { src: string; alt: string }
 }
 
-/** Bilah bawah footer: hak cipta, tautan hukum, dan gambar metode pembayaran. */
-export function FooterBottom({ copyright, legalLinks, payment }: FooterBottomProps) {
+/** Bilah bawah footer: hak cipta di kiri, tautan hukum di kanan. */
+export function FooterBottom({ copyright, legalLinks }: FooterBottomProps) {
   return (
     <div className="bg-theme py-[35px]">
       <Container>
-        <div className="flex items-center justify-between max-md:flex-wrap max-md:justify-center max-md:gap-5">
-          <div className="flex flex-wrap items-center gap-x-8 gap-y-2 max-md:justify-center">
-            <Reveal
-              as="p"
-              animation="fade-in-up"
-              delay={0.3}
-              className="text-[20px] text-white capitalize"
-            >
-              {copyright.prefix} <span className="text-theme-3">{copyright.year}</span>{" "}
-              <Link href={copyright.brandHref} className="text-white hover:text-theme-3">
-                {copyright.brand}
-              </Link>
-              {copyright.suffix}
-            </Reveal>
+        <div className="flex items-center justify-between gap-x-8 gap-y-3 max-md:flex-col">
+          <Reveal
+            as="p"
+            animation="fade-in-up"
+            delay={0.3}
+            className="text-[20px] text-white capitalize max-md:text-center"
+          >
+            {copyright.prefix} <span className="text-theme-3">{copyright.year}</span>{" "}
+            <Link href={copyright.brandHref} className="text-white hover:text-theme-3">
+              {copyright.brand}
+            </Link>
+            {copyright.suffix}
+          </Reveal>
+          <Reveal animation="fade-in-right" delay={0.5}>
             <ul className="flex flex-wrap items-center gap-x-6 gap-y-1 max-md:justify-center">
               {legalLinks.map((link) => (
                 <li key={link.href}>
@@ -48,9 +46,6 @@ export function FooterBottom({ copyright, legalLinks, payment }: FooterBottomPro
                 </li>
               ))}
             </ul>
-          </div>
-          <Reveal animation="fade-in-right" delay={0.5}>
-            <SiteImage src={payment.src} alt={payment.alt} />
           </Reveal>
         </div>
       </Container>

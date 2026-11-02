@@ -2,7 +2,7 @@ import type { SpecialBannersSectionProps } from "@/components/sections/home/spec
 
 export const specialBannersContent: SpecialBannersSectionProps = {
   burger: {
-    backgroundImage: "banner/burger-bg.png",
+    backgroundImage: "banner/burger-bg.jpg",
     kicker: "Hari Ini",
     title: "Spesial",
     product: { highlight: "Burger", after: "Sapi" },
@@ -13,7 +13,7 @@ export const specialBannersContent: SpecialBannersSectionProps = {
     ornament: "shape/burger-text.png",
   },
   offer: {
-    backgroundImage: "banner/pepsi-bg.png",
+    backgroundImage: "banner/pepsi-bg.jpg",
     eyebrow: "Renyah di Setiap Gigitan",
     title: ["Paket Makanan", "Cepat Saji"],
     description: [

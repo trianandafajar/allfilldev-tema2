@@ -26,7 +26,7 @@ const fieldClass =
   "h-auto rounded-[9px] border-line-light px-[25px] py-[18px] text-[18px] md:text-[18px] font-medium text-white capitalize [color-scheme:dark] placeholder:text-white focus-visible:border-white focus-visible:ring-0 max-sm:px-5 max-sm:py-3 max-sm:text-sm"
 
 const triggerClass =
-  "relative h-auto w-full justify-start rounded-[9px] border-line-light px-[25px] py-[18px] text-[18px] focus-visible:border-white focus-visible:ring-0 data-[size=default]:h-auto max-sm:px-5 max-sm:py-3 [&>svg]:hidden after:absolute after:top-1/2 after:right-[23px] after:-mt-1.5 after:size-2.5 after:origin-[66%_66%] after:rotate-45 after:border-r after:border-b after:border-white after:transition-all after:duration-150 after:ease-in-out after:content-[''] data-[state=open]:after:-rotate-135"
+  "relative h-auto w-full justify-start rounded-[9px] border-line-light px-[25px] py-[18px] text-[18px] font-medium text-white capitalize data-placeholder:text-white focus-visible:border-white focus-visible:ring-0 data-[size=default]:h-auto max-sm:px-5 max-sm:py-3 [&>svg]:hidden after:absolute after:top-1/2 after:right-[23px] after:-mt-1.5 after:size-2.5 after:origin-[66%_66%] after:rotate-45 after:border-r after:border-b after:border-white after:transition-all after:duration-150 after:ease-in-out after:content-[''] data-[state=open]:after:-rotate-135"
 
 const itemClass =
   "min-h-10 cursor-pointer rounded-none px-2.5 py-0 text-[18px] leading-10 font-normal text-theme uppercase focus:bg-transparent focus:text-theme not-data-[variant=destructive]:focus:**:text-theme data-[state=checked]:font-bold [&>span:first-child]:hidden"

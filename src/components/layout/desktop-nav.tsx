@@ -33,7 +33,7 @@ function NavList({ items, level, className }: NavListProps) {
           key={`${item.href}-${item.label}`}
           className={
             isTop
-              ? "relative me-[30px] inline-block last:me-0"
+              ? "relative me-[30px] inline-block last:me-0 max-xl:me-5"
               : "relative m-0 block w-full p-0 [&:last-child>a]:border-b-0"
           }
         >

@@ -47,7 +47,7 @@ const variants = {
       pulse
     ),
     mainImage:
-      "-right-5 -bottom-2.5 transition-all duration-400 ease-in-out group-hover/offer:-right-[50px] max-2xl:w-[300px] max-xl:w-auto max-sm:right-0 max-sm:bottom-0 max-sm:w-[250px] max-sm:group-hover/offer:-right-[50px]",
+      "-right-5 -bottom-2.5 transition-all duration-400 ease-in-out group-hover/offer:-right-[50px] max-2xl:w-[300px] md:max-xl:w-[50%] max-sm:right-0 max-sm:bottom-0 max-sm:w-[250px] max-sm:group-hover/offer:-right-[50px]",
     mainImageClass: "max-2xl:h-full max-2xl:w-full",
   },
 } as const satisfies Record<

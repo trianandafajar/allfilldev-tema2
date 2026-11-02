@@ -45,7 +45,7 @@ export const products: readonly Product[] = [
     sizes: ["kecil", "sedang", "besar"],
     description:
       "Ayam goreng berbumbu rahasia dengan kulit renyah dan daging yang tetap juicy, disajikan hangat dengan saus pilihan.",
-    image: "food/kfc.png",
+    image: "food/ayam-krispi.png",
     imageAlt: "Ayam goreng krispi",
     listImage: "shop-food/list/01.png",
   }),

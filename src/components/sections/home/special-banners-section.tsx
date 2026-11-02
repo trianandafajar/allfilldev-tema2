@@ -20,7 +20,7 @@ export function SpecialBannersSection({
   return (
     <Section surface padding="no-top">
       <Container>
-        <div className="grid grid-cols-24 gap-x-6">
+        <div className="grid grid-cols-24 gap-x-0 md:gap-x-6">
           <Reveal
             delay={0.3}
             className="col-span-24 lg:col-span-18 lg:col-start-4 xl:col-span-14 xl:col-start-1"

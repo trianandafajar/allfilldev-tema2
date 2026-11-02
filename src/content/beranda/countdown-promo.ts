@@ -14,6 +14,6 @@ export const countdownPromoContent = {
   cta: { label: "Pesan Sekarang", href: "/menu/ayam-panggang" },
   image: {
     src: "food/kfc.png",
-    alt: "Hot wing ayam krispi dengan kentang goreng",
+    alt: "Burger ayam krispi, ayam goreng, kentang goreng, dan cola",
   },
 } satisfies CountdownPromoSectionProps

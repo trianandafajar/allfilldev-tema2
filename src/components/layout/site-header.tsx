@@ -29,8 +29,6 @@ export function SiteHeader() {
     <header className="bg-surface">
       <HeaderTopBar
         notice={topBar.notice}
-        searchLabel={topBar.searchLabel}
-        searchPlaceholder={topBar.searchPlaceholder}
         social={topBarSocialLinks}
       />
       <StickyHeaderBar>
@@ -46,7 +44,7 @@ export function SiteHeader() {
                 <DesktopNav items={navItems} ariaLabel={headerContent.menuLabel} />
               </div>
             </div>
-            <div className="flex items-center justify-end gap-[25px]">
+            <div className="flex items-center justify-end gap-[25px] max-xl:gap-4">
               <HeaderCart {...cartPreview} />
               <div className="max-md:hidden">
                 <ThemeButton href={cta.href} variant="theme-red">

@@ -2,7 +2,7 @@ import type { HeroSectionProps } from "@/components/sections/home/hero-section"
 
 const cta = { label: "Pesan Sekarang", href: "/menu/ayam-goreng-krispi" }
 const eyebrow = "Renyah di Setiap Gigitan"
-const image = { src: "hero/chiken.png", alt: "Ayam goreng krispi" }
+const image = { src: "hero/chiken.png", alt: "Ember ayam goreng krispi" }
 
 export const heroContent: HeroSectionProps = {
   label: "Promo utama",

@@ -6,7 +6,7 @@ export const promoBannersContent: PromoBannersSectionProps = {
     right: "shape/fry-shape.png",
   },
   offer: {
-    backgroundImage: "banner/offer-bg.png",
+    backgroundImage: "banner/offer-bg.jpg",
     eyebrow: "Renyah di Setiap Gigitan",
     title: ["Super", "Lezat"],
     badge: { src: "offer/50percent-off.png", alt: "Diskon 50 persen" },
@@ -14,7 +14,7 @@ export const promoBannersContent: PromoBannersSectionProps = {
     mainImage: { src: "food/main-food.png", alt: "Hidangan ayam goreng dan kentang" },
   },
   pizza: {
-    backgroundImage: "banner/pizza-bg.png",
+    backgroundImage: "banner/pizza-bg.jpg",
     headline: { src: "shape/pizza-text.png", alt: "Pizza keju super" },
     accent: "shape/pizza-text-2.png",
     image: { src: "food/pizza-2.png", alt: "Pizza keju dengan topping lengkap" },

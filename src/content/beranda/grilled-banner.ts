@@ -11,6 +11,6 @@ export const grilledBannerContent = {
   cta: { label: "Pesan Sekarang", href: "/menu/ayam-panggang" },
   image: {
     src: "food/grilled.png",
-    alt: "Ayam panggang Foodking dengan kentang goreng dan sayuran segar",
+    alt: "Potongan ayam panggang pedas Foodking",
   },
 } satisfies GrilledBannerSectionProps

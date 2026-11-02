@@ -98,7 +98,7 @@ export const blogPosts: readonly BlogPost[] = [
     excerpt:
       "Beberapa kebiasaan kecil saat memesan bisa mempercepat pesanan Anda tiba: alamat jelas, nomor aktif, dan waktu pesan yang tepat.",
     cover: "blog/post-3.jpg",
-    coverAlt: "Kurir Foodking membawa kotak pesanan",
+    coverAlt: "Kurir menyerahkan pesanan kepada pelanggan",
     category: "info-pelanggan",
     tags: ["pesan antar", "tips"],
     author: "Hendra Kusuma",
@@ -131,7 +131,7 @@ export const blogPosts: readonly BlogPost[] = [
     excerpt:
       "Foodking dimulai dari satu gerobak dan satu resep ayam. Inilah perjalanan kami dan hal yang tetap kami jaga sampai sekarang.",
     cover: "blog/post-4.jpg",
-    coverAlt: "Dapur Foodking dengan koki yang sedang bekerja",
+    coverAlt: "Koki memasak di dapur",
     category: "kisah-kami",
     tags: ["kisah", "dapur"],
     author: "Budi Santoso",
@@ -167,7 +167,7 @@ export const blogPosts: readonly BlogPost[] = [
     excerpt:
       "Microwave sering membuat dasar pizza lembek. Coba cara menghangatkan ini supaya keju kembali leleh dan pinggirannya renyah.",
     cover: "blog/01.jpg",
-    coverAlt: "Irisan pizza keju yang meleleh",
+    coverAlt: "Irisan pizza di atas talenan",
     category: "tips-dapur",
     tags: ["pizza", "tips"],
     author: "Agus Wijaya",
@@ -199,7 +199,7 @@ export const blogPosts: readonly BlogPost[] = [
     excerpt:
       "Paket combo terbaru dirancang untuk berbagi. Satu pesanan cukup untuk empat orang, dengan pilihan ayam, burger, dan minuman.",
     cover: "blog/02.jpg",
-    coverAlt: "Paket combo berisi ayam, burger, kentang, dan minuman",
+    coverAlt: "Hidangan bersama keluarga di atas meja makan",
     category: "menu-baru",
     tags: ["combo", "keluarga", "promo"],
     author: "Maya Anggraini",

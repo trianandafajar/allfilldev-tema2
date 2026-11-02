@@ -36,8 +36,8 @@ export function CountdownPromoSection({
         <Container fluid>
           <div className="grid grid-cols-12 gap-x-6">
             <div className="col-span-12 lg:col-span-5">
-              <div className="group/kfc absolute top-0 left-0 h-[730px] w-[1017px] bg-[url('/images/banner/kfc-bg.png')] bg-cover bg-center bg-no-repeat max-2xl:h-[700px] max-2xl:w-[700px] max-xl:h-[730px] max-xl:w-[600px] max-lg:h-[500px] max-lg:w-[1000px] max-sm:h-[400px] max-sm:w-[800px]">
-                <div className="absolute bottom-[-30px] left-0 w-[960px] transition-all duration-400 ease-in-out group-hover/kfc:-left-[30px] max-2xl:bottom-0 max-2xl:w-[600px] max-xl:bottom-[10%] max-xl:w-[500px] max-lg:bottom-0 max-lg:left-[50px] max-sm:bottom-0 max-sm:w-[400px] max-[400px]:bottom-[10px] max-[400px]:w-[340px]">
+              <div className="group/kfc absolute top-0 left-0 h-[730px] w-[min(1017px,calc(50vw+70px))] bg-[url('/images/banner/kfc-bg.png')] bg-cover bg-center bg-no-repeat max-2xl:h-[700px] max-2xl:w-[700px] max-xl:h-[730px] max-xl:w-[600px] max-lg:h-[500px] max-lg:w-[1000px] max-sm:h-[400px] max-sm:w-[800px]">
+                <div className="absolute bottom-[-30px] left-0 w-[min(960px,calc((50vw+70px)*0.944))] transition-all duration-400 ease-in-out group-hover/kfc:-left-[30px] max-2xl:bottom-0 max-2xl:w-[600px] max-xl:bottom-[10%] max-xl:w-[500px] max-lg:bottom-0 max-lg:left-[50px] max-sm:bottom-0 max-sm:w-[400px] max-[400px]:bottom-[10px] max-[400px]:w-[340px]">
                   <SiteImage src={image.src} alt={image.alt} className="w-full" />
                 </div>
                 <ShapeImage
@@ -51,7 +51,7 @@ export function CountdownPromoSection({
                 <SectionTitle eyebrow={eyebrow}>
                   <RichLines lines={title} />
                 </SectionTitle>
-                <Reveal as="p" delay={0.5} className="mt-4 lg:mt-0">
+                <Reveal as="p" delay={0.5} className="mt-4 font-medium text-heading lg:mt-0">
                   <RichLines lines={description} />
                 </Reveal>
                 <Reveal delay={0.7} className="mt-10">

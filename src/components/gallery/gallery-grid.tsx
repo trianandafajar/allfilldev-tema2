@@ -17,10 +17,10 @@ const SPANS = [
   "lg:col-span-3",
 ] as const
 
-/** Grid galeri 12 kolom dengan gutter 24px (padanan `row g-4`); di bawah `lg` satu kolom. */
+/** Grid galeri 12 kolom dengan gutter 24px (padanan `row g-4`); dua kolom di tablet (`md`), satu kolom di mobile. */
 export function GalleryGrid({ items, openLabel, closeLabel }: GalleryGridProps) {
   return (
-    <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
+    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-12">
       {items.map((item, index) => (
         <Reveal
           key={item.src}

@@ -79,20 +79,22 @@ export async function ShopView({ searchParams }: ShopViewProps) {
           </div>
         ) : (
           <>
-            {result.items.map((item) => (
-              <ProductListItem
-                key={item.slug}
-                name={item.name}
-                href={`/menu/${item.slug}`}
-                image={item.listImage}
-                imageAlt={item.imageAlt}
-                description={item.description}
-                priceRange={`${formatRupiah(item.price)} – ${formatRupiah(item.maxPrice)}`}
-                discountLabel="-5%"
-                rating={item.rating}
-                orderLabel={list.orderLabel}
-              />
-            ))}
+            <div className="md:max-lg:grid md:max-lg:grid-cols-2 md:max-lg:gap-x-6">
+              {result.items.map((item) => (
+                <ProductListItem
+                  key={item.slug}
+                  name={item.name}
+                  href={`/menu/${item.slug}`}
+                  image={item.listImage}
+                  imageAlt={item.imageAlt}
+                  description={item.description}
+                  priceRange={`${formatRupiah(item.price)} – ${formatRupiah(item.maxPrice)}`}
+                  discountLabel="-5%"
+                  rating={item.rating}
+                  orderLabel={list.orderLabel}
+                />
+              ))}
+            </div>
             <PageNav
               page={result.page}
               pageCount={result.pageCount}

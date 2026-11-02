@@ -17,7 +17,7 @@ export const contactPageContent = {
         icon: "icon/location.svg",
         title: "Alamat",
         text: contact.address,
-        href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contact.address)}`,
+        href: `https://www.google.com/maps/search/?api=1&hl=id&query=${encodeURIComponent(contact.address)}`,
       },
       {
         icon: "icon/phone.svg",
@@ -42,7 +42,7 @@ export const contactPageContent = {
   },
   map: {
     title: "Peta lokasi Foodking",
-    src: `https://www.google.com/maps?q=${encodeURIComponent(contact.address)}&output=embed`,
+    src: `https://www.google.com/maps?q=${encodeURIComponent(contact.address)}&hl=id&output=embed`,
   },
   form: {
     title: "Kirim Pesan",

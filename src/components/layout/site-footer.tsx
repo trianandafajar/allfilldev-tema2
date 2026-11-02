@@ -14,7 +14,7 @@ const addressTextClass = "text-[20px] leading-[150%] font-normal text-body-text 
 
 /** Footer situs: kolom merek, tautan, alamat, aplikasi, dan bilah hak cipta. */
 export function SiteFooter() {
-  const { brand, address, app } = footerContent
+  const { brand, address, support } = footerContent
 
   return (
     <footer className="relative overflow-hidden bg-surface">
@@ -86,26 +86,14 @@ export function SiteFooter() {
               delay={0.9}
               className="col-span-12 sm:col-span-6 lg:col-span-3 xl:col-span-4 xl:pl-9"
             >
-              <FooterWidget title={app.title}>
+              <FooterWidget title={support.title}>
                 <div>
-                  <h5 className="font-normal text-body-text">{app.prompt}</h5>
-                  <div className="mt-[30px] flex items-center gap-2.5 max-sm:mt-5">
-                    {app.stores.map((store) => (
-                      <a key={store.src} href={store.href}>
-                        <SiteImage src={store.src} alt={store.alt} />
-                      </a>
-                    ))}
-                  </div>
-                  <div className="mt-10 max-sm:mt-5">
-                    <h5 className="mb-2.5 font-normal text-body-text">
-                      {app.supportLabel}
-                    </h5>
-                    <h3 className="text-[28px]">
-                      <a href={contact.phoneHref} className="text-theme">
-                        {contact.phone}
-                      </a>
-                    </h3>
-                  </div>
+                  <h5 className="mb-2.5 font-normal text-body-text">{support.label}</h5>
+                  <h3 className="text-[28px]">
+                    <a href={contact.phoneHref} className="text-theme">
+                      {contact.phone}
+                    </a>
+                  </h3>
                 </div>
               </FooterWidget>
             </Reveal>
@@ -115,7 +103,6 @@ export function SiteFooter() {
       <FooterBottom
         copyright={footerContent.copyright}
         legalLinks={footerContent.legalLinks}
-        payment={footerContent.payment}
       />
     </footer>
   )

@@ -6,4 +6,14 @@ export const contact = {
   emailHref: "mailto:halo@foodking.id",
   address: "Jl. Jenderal Sudirman No. 123, Jakarta Pusat 10220",
   hours: "Setiap hari, 10.00 – 22.00 WIB",
+  /** Bentuk terstruktur dari `address` dan `hours` untuk data terstruktur (JSON-LD). */
+  location: {
+    street: "Jl. Jenderal Sudirman No. 123",
+    city: "Jakarta Pusat",
+    region: "DKI Jakarta",
+    postalCode: "10220",
+    country: "ID",
+  },
+  opens: "10:00",
+  closes: "22:00",
 } as const

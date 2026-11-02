@@ -15,6 +15,18 @@ export const siteConfig = {
   language: "id",
   locale: "id_ID",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  keywords: [
+    "restoran cepat saji",
+    "ayam goreng krispi",
+    "burger",
+    "pizza",
+    "pesan antar makanan",
+    "reservasi meja",
+  ],
+  category: "food",
+  /** Mengikuti token `--theme` dan `--surface` di globals.css (manifest dan meta tidak bisa memakai CSS variable). */
+  themeColor: "#00813d",
+  backgroundColor: "#f4f1ea",
 } as const;
 
 type SitePage = { path: string; title: string; description: string };

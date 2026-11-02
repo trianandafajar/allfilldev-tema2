@@ -36,8 +36,6 @@ export const headerContent = {
       highlight: "100%",
       text: "Pengiriman aman tanpa kontak langsung dengan kurir",
     },
-    searchLabel: "Cari",
-    searchPlaceholder: "Cari",
   },
   cta: { label: "Hubungi Kami", href: "/kontak" } satisfies LinkItem,
   openMenuLabel: "Buka menu",
@@ -69,14 +67,14 @@ export const cartPreview = {
 
 const offcanvasGallery: readonly (readonly GalleryImage[])[] = [
   [
-    { src: "header/01.jpg", alt: "Foto galeri Foodking 1" },
-    { src: "header/02.jpg", alt: "Foto galeri Foodking 2" },
-    { src: "header/03.jpg", alt: "Foto galeri Foodking 3" },
+    { src: "header/01.jpg", alt: "Burger keju dengan irisan tomat dan bawang" },
+    { src: "header/02.jpg", alt: "Pizza pepperoni dengan keju meleleh" },
+    { src: "header/03.jpg", alt: "Ayam goreng krispi dengan saus cocolan" },
   ],
   [
-    { src: "header/04.jpg", alt: "Foto galeri Foodking 4" },
-    { src: "header/05.jpg", alt: "Foto galeri Foodking 5" },
-    { src: "header/06.jpg", alt: "Foto galeri Foodking 6" },
+    { src: "header/04.jpg", alt: "Kentang goreng renyah" },
+    { src: "header/05.jpg", alt: "Milkshake cokelat dengan krim kocok" },
+    { src: "header/06.jpg", alt: "Es krim dengan topping pretzel dan cokelat" },
   ],
 ]
 
@@ -93,7 +91,7 @@ export const offcanvasContent = {
       icon: "map-marker-alt",
       family: "light",
       text: contact.address,
-      href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contact.address)}`,
+      href: `https://www.google.com/maps/search/?api=1&hl=id&query=${encodeURIComponent(contact.address)}`,
     },
     {
       icon: "envelope",
@@ -146,26 +144,9 @@ export const footerContent = {
     hoursTitle: "Jam Buka:",
     hours: contact.hours,
   },
-  app: {
-    title: "Unduh Aplikasi",
-    prompt: "Tersedia di App Store dan Google Play",
-    stores: [
-      {
-        src: "app-store.png",
-        alt: "Unduh di App Store",
-        href: "#",
-      },
-      {
-        src: "google-play.png",
-        alt: "Dapatkan di Google Play",
-        href: "#",
-      },
-    ],
-    supportLabel: "Layanan Pelanggan 24 Jam",
-  },
-  payment: {
-    src: "card.png",
-    alt: "Metode pembayaran yang diterima",
+  support: {
+    title: "Layanan Pelanggan",
+    label: "Buka 24 jam, setiap hari",
   },
   copyright: {
     prefix: "© Hak Cipta",
