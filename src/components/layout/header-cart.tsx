@@ -1,17 +1,19 @@
+"use client"
+
 import Link from "next/link"
+import { useCart } from "@/components/cart/cart-provider"
 import { Icon } from "@/components/common/icon"
 import { SiteImage } from "@/components/common/site-image"
 import { ThemeButton } from "@/components/common/theme-button"
-import type { CartPreviewItem, LinkItem } from "./types"
+import { formatRupiah } from "@/lib/format"
+import type { LinkItem } from "./types"
 
 type HeaderCartProps = {
   label: string
-  count: number
-  items: readonly CartPreviewItem[]
+  emptyLabel: string
+  removeLabel: string
   shippingLabel: string
-  shippingValue: string
   totalLabel: string
-  totalValue: string
   cartButton: LinkItem
   checkoutButton: LinkItem
 }
@@ -19,44 +21,60 @@ type HeaderCartProps = {
 /** Ikon keranjang dengan dropdown pratinjau yang terbuka saat hover. Tersembunyi di bawah `xl`. */
 export function HeaderCart({
   label,
-  count,
-  items,
+  emptyLabel,
+  removeLabel,
   shippingLabel,
-  shippingValue,
   totalLabel,
-  totalValue,
   cartButton,
   checkoutButton,
 }: HeaderCartProps) {
+  const { items, totals, remove } = useCart()
+
   return (
     <div className="group/cart relative max-xl:hidden">
       <div className="invisible absolute top-[200%] left-[-70px] z-9999 w-[340px] origin-top rotate-x-90 bg-white px-5 pt-[5px] pb-0 shadow-[0_0_7px_0.5px] shadow-black/15 transition-all duration-500 ease-[ease] group-hover/cart:visible group-hover/cart:rotate-x-0">
-        {items.map((item, index) => (
-          <ul key={`${item.image}-${index}`}>
-            <li className="flex items-center gap-2.5 border-b border-line py-0.5 text-base font-semibold uppercase">
-              <SiteImage src={item.image} alt={item.imageAlt} className="w-[90px]" />
-              <div>
-                <Link
-                  href={item.href}
-                  className="relative p-0 text-xl uppercase after:absolute after:top-[15px] after:right-[-88px] after:size-[18px] after:rounded-full after:bg-theme-2 after:text-center after:font-fa after:text-[10px] after:leading-[18px] after:font-black after:text-white after:content-['\f00d']"
+        {items.length === 0 ? (
+          <p className="py-5 text-center text-[18px] font-semibold text-heading uppercase">
+            {emptyLabel}
+          </p>
+        ) : (
+          <>
+            <ul className="max-h-[320px] overflow-y-auto">
+              {items.map(({ product, quantity }) => (
+                <li
+                  key={product.slug}
+                  className="flex items-center gap-2.5 border-b border-line py-0.5 text-base font-semibold uppercase"
                 >
-                  {item.name}
-                </Link>
-                <span className="block text-[18px] font-medium text-heading">
-                  {item.price}
-                </span>
-              </div>
-            </li>
-          </ul>
-        ))}
-        <div className="mt-2.5 flex items-center justify-between">
-          <span className="text-[18px] font-semibold text-heading uppercase">
-            {shippingLabel} : {shippingValue}
-          </span>
-          <span className="text-[18px] font-semibold text-heading uppercase">
-            {totalLabel} : {totalValue}
-          </span>
-        </div>
+                  <SiteImage src={product.image} alt={product.imageAlt} className="w-[90px]" />
+                  <div className="min-w-0 flex-1">
+                    <Link href={`/menu/${product.slug}`} className="block p-0 text-xl uppercase">
+                      {product.name}
+                    </Link>
+                    <span className="block text-[18px] font-medium text-heading">
+                      {formatRupiah(product.price)} × {quantity}
+                    </span>
+                  </div>
+                  <button
+                    type="button"
+                    aria-label={`${removeLabel} ${product.name}`}
+                    onClick={() => remove(product.slug)}
+                    className="size-[18px] shrink-0 cursor-pointer rounded-full bg-theme-2 text-center text-white"
+                  >
+                    <Icon name="times" family="solid" className="text-[10px] leading-[18px]" />
+                  </button>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-2.5 flex items-center justify-between">
+              <span className="text-[18px] font-semibold text-heading uppercase">
+                {shippingLabel} : {formatRupiah(totals.shipping)}
+              </span>
+              <span className="text-[18px] font-semibold text-heading uppercase">
+                {totalLabel} : {formatRupiah(totals.total)}
+              </span>
+            </div>
+          </>
+        )}
         <div className="mt-5 mb-6 flex justify-between">
           <ThemeButton href={cartButton.href} className="px-7 py-4 text-sm">
             {cartButton.label}
@@ -72,7 +90,7 @@ export function HeaderCart({
       </div>
       <Link href={cartButton.href} aria-label={label} className="relative">
         <span className="absolute -top-[7px] -right-2 size-4 rounded-full bg-heading text-center text-xs leading-4 font-medium text-white">
-          {count}
+          {totals.count}
         </span>
         <Icon name="shopping-basket" className="text-theme-2" />
       </Link>

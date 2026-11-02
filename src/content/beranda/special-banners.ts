@@ -6,7 +6,7 @@ export const specialBannersContent: SpecialBannersSectionProps = {
     kicker: "Hari Ini",
     title: "Spesial",
     product: { highlight: "Burger", after: "Sapi" },
-    productHref: "/menu",
+    productHref: "/toko",
     cta: { label: "Pesan Sekarang", href: "/menu/burger-sapi" },
     image: { src: "food/big-burger.png", alt: "Burger sapi berukuran besar" },
     textShape: "shape/pizza-text-2.png",

@@ -20,16 +20,6 @@ export type SocialLink = {
   icon: IconName
 }
 
-/** Produk pada pratinjau keranjang di header. */
-export type CartPreviewItem = {
-  name: string
-  price: string
-  href: string
-  /** Path gambar relatif terhadap `public/images`. */
-  image: string
-  imageAlt: string
-}
-
 /** Gambar galeri pada offcanvas (path relatif terhadap `public/images`). */
 export type GalleryImage = {
   src: string

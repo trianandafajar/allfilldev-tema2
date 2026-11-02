@@ -1,3 +1,13 @@
+import { blogPageContent, blogPosts } from "@/content/blog/posts";
+import { faqPageContent } from "@/content/faq/faq-page";
+import { galleryPageContent } from "@/content/galeri/gallery-page";
+import { contactPageContent } from "@/content/kontak/contact-page";
+import { privacyPageContent } from "@/content/legal/privacy";
+import { termsPageContent } from "@/content/legal/terms";
+import { aboutPageContent } from "@/content/tentang-kami/about-page";
+import { teamPageContent } from "@/content/tim/team-page";
+import { products } from "@/content/toko/products";
+
 export const siteConfig = {
   name: "Foodking",
   description:
@@ -7,6 +17,32 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
 } as const;
 
-export const sitePages = [
+type SitePage = { path: string; title: string; description: string };
+
+/** Halaman publik; masuk ke sitemap dan llms.txt. Detail produk dan artikel diturunkan dari katalog dan daftar artikel. */
+export const sitePages: readonly SitePage[] = [
   { path: "/", title: "Beranda", description: siteConfig.description },
-] as const;
+  {
+    path: "/toko",
+    title: "Toko",
+    description: "Daftar menu Foodking: ayam goreng, burger, pizza, dan lainnya.",
+  },
+  ...products.map((product) => ({
+    path: `/menu/${product.slug}`,
+    title: product.name,
+    description: product.description,
+  })),
+  { path: "/blog", ...blogPageContent.metadata },
+  ...blogPosts.map((post) => ({
+    path: `/blog/${post.slug}`,
+    title: post.title,
+    description: post.excerpt,
+  })),
+  { path: "/tentang-kami", ...aboutPageContent.metadata },
+  { path: "/tim", ...teamPageContent.metadata },
+  { path: "/galeri", ...galleryPageContent.metadata },
+  { path: "/faq", ...faqPageContent.metadata },
+  { path: "/kontak", ...contactPageContent.metadata },
+  { path: "/kebijakan-privasi", ...privacyPageContent.metadata },
+  { path: "/syarat-ketentuan", ...termsPageContent.metadata },
+];

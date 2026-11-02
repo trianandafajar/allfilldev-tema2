@@ -4,6 +4,7 @@ export const iconGlyphs = {
   heart: "",
   search: "",
   plus: "",
+  minus: "",
   phone: "",
   times: "",
   star: "",
@@ -20,6 +21,10 @@ export const iconGlyphs = {
   "map-marker-alt": "",
   "shopping-basket": "",
   "shopping-cart": "",
+  "sort-alt": "",
+  th: "",
+  list: "",
+  "chevron-right": "",
   // Font Awesome Brands
   "facebook-f": "",
   "linkedin-in": "",
@@ -34,6 +39,18 @@ export const iconGlyphs = {
   "flaticon-phone-call-2": "",
   "flaticon-quality": "",
   "flaticon-reputation": "",
+  "flaticon-burger": "",
+  "flaticon-chicken": "",
+  "flaticon-french-fries": "",
+  "flaticon-pizza": "",
+  "flaticon-sandwich": "",
+  "flaticon-bread": "",
+  "flaticon-rice": "",
+  "flaticon-hotdog": "",
+  "check": "",
+  "caret-up": "",
+  "caret-down": "",
+  "flaticon-shopping-cart": "",
 } as const
 
 export type IconName = keyof typeof iconGlyphs

@@ -6,7 +6,7 @@ export const grilledBannerContent = {
   product: {
     name: [["Ayam ", { accent: "Panggang" }]],
     price: "Rp59.000",
-    href: "/menu",
+    href: "/toko",
   },
   cta: { label: "Pesan Sekarang", href: "/menu/ayam-panggang" },
   image: {

@@ -1,5 +1,4 @@
 import type {
-  CartPreviewItem,
   FooterLinkGroup,
   GalleryImage,
   LinkItem,
@@ -23,55 +22,10 @@ export const preloaderContent = {
 
 export const navItems: readonly NavItem[] = [
   { label: "Beranda", href: "/" },
-  {
-    label: "Toko",
-    href: "/toko",
-    children: [
-      { label: "Grid Produk", href: "/toko" },
-      { label: "Daftar Produk", href: "/toko/daftar" },
-      { label: "Sidebar Kiri", href: "/toko/sidebar-kiri" },
-      { label: "Sidebar Kanan", href: "/toko/sidebar-kanan" },
-      { label: "Detail Produk", href: "/toko/detail" },
-      { label: "Keranjang", href: "/keranjang" },
-      { label: "Checkout", href: "/checkout" },
-    ],
-  },
-  {
-    label: "Blog",
-    href: "/blog",
-    children: [
-      { label: "Blog", href: "/blog" },
-      { label: "Detail Blog", href: "/blog/detail" },
-    ],
-  },
-  {
-    label: "Halaman",
-    href: "/tentang-kami",
-    children: [
-      { label: "Tentang Kami", href: "/tentang-kami" },
-      {
-        label: "Tim Koki",
-        href: "/tim",
-        children: [
-          { label: "Koki", href: "/tim" },
-          { label: "Detail Koki", href: "/tim/detail" },
-        ],
-      },
-      {
-        label: "Menu Makanan",
-        href: "/menu",
-        children: [
-          { label: "Menu Makanan 01", href: "/menu" },
-          { label: "Menu Makanan 02", href: "/menu/2" },
-        ],
-      },
-      { label: "Galeri", href: "/galeri" },
-      { label: "Testimoni", href: "/testimoni" },
-      { label: "Reservasi", href: "/reservasi" },
-      { label: "FAQ", href: "/faq" },
-      { label: "Halaman 404", href: "/404" },
-    ],
-  },
+  { label: "Tentang Kami", href: "/tentang-kami" },
+  { label: "Toko", href: "/toko" },
+  { label: "Tim", href: "/tim" },
+  { label: "Galeri", href: "/galeri" },
   { label: "Kontak", href: "/kontak" },
 ]
 
@@ -82,7 +36,6 @@ export const headerContent = {
       highlight: "100%",
       text: "Pengiriman aman tanpa kontak langsung dengan kurir",
     },
-    trackOrder: { label: "Lacak Pesanan", href: "/lacak-pesanan" } satisfies LinkItem,
     searchLabel: "Cari",
     searchPlaceholder: "Cari",
   },
@@ -104,31 +57,12 @@ export const offcanvasSocialLinks: readonly SocialLink[] = [
   { label: "LinkedIn", href: "#", icon: "linkedin-in" },
 ]
 
-const cartItems: readonly CartPreviewItem[] = [
-  {
-    name: "Ayam Panggang",
-    price: "Rp45.000",
-    href: "/toko/detail",
-    image: "shop-food/s2.png",
-    imageAlt: "Ayam panggang",
-  },
-  {
-    name: "Ayam Panggang",
-    price: "Rp38.000",
-    href: "/toko/detail",
-    image: "shop-food/s3.png",
-    imageAlt: "Ayam panggang",
-  },
-]
-
 export const cartPreview = {
   label: "Keranjang belanja",
-  count: cartItems.length,
-  items: cartItems,
+  emptyLabel: "Keranjang masih kosong",
+  removeLabel: "Hapus",
   shippingLabel: "Ongkir",
-  shippingValue: "Rp10.000",
   totalLabel: "Total",
-  totalValue: "Rp93.000",
   cartButton: { label: "Lihat Keranjang", href: "/keranjang" } satisfies LinkItem,
   checkoutButton: { label: "Checkout", href: "/checkout" } satisfies LinkItem,
 } as const
@@ -175,7 +109,7 @@ export const offcanvasContent = {
       href: contact.phoneHref,
     },
   ],
-  cta: { label: "Pesan Sekarang", href: "/menu" } satisfies LinkItem,
+  cta: { label: "Pesan Sekarang", href: "/toko" } satisfies LinkItem,
 } as const
 
 /** Pecah alamat menjadi baris jalan dan kode pos (lima digit di akhir) agar kode pos bisa diberi warna. */
@@ -189,22 +123,12 @@ function splitAddress(address: string) {
 const footerQuickLinks: FooterLinkGroup = {
   title: "Tautan Cepat",
   links: [
-    { label: "Layanan", href: "/tentang-kami" },
     { label: "Tentang Kami", href: "/tentang-kami" },
-    { label: "Berita Terbaru", href: "/blog" },
+    { label: "Blog", href: "/blog" },
     { label: "Tim Kami", href: "/tim" },
-    { label: "Testimoni", href: "/testimoni" },
-  ],
-}
-
-const footerAccountLinks: FooterLinkGroup = {
-  title: "Akun Saya",
-  links: [
-    { label: "Profil Saya", href: "/akun" },
-    { label: "Riwayat Pesanan", href: "/akun/pesanan" },
-    { label: "Daftar Favorit", href: "/akun/favorit" },
-    { label: "Lacak Pesanan", href: "/lacak-pesanan" },
-    { label: "Keranjang Belanja", href: "/keranjang" },
+    { label: "Galeri", href: "/galeri" },
+    { label: "FAQ", href: "/faq" },
+    { label: "Kontak", href: "/kontak" },
   ],
 }
 
@@ -216,7 +140,6 @@ export const footerContent = {
   },
   socialLinks: topBarSocialLinks,
   quickLinks: footerQuickLinks,
-  accountLinks: footerAccountLinks,
   address: {
     title: "Alamat:",
     ...splitAddress(contact.address),
@@ -251,4 +174,8 @@ export const footerContent = {
     brandHref: "/",
     suffix: ". Semua Hak Dilindungi.",
   },
+  legalLinks: [
+    { label: "Kebijakan Privasi", href: "/kebijakan-privasi" },
+    { label: "Syarat & Ketentuan", href: "/syarat-ketentuan" },
+  ] satisfies readonly LinkItem[],
 } as const

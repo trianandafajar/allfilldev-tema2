@@ -1,10 +1,12 @@
 import Link from "next/link"
+import { AddToCartButton } from "@/components/cart/add-to-cart-button"
 import { Icon } from "@/components/common/icon"
 import { SiteImage } from "@/components/common/site-image"
-import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
 export type ProductCardData = {
+  /** Slug produk di katalog; dipakai untuk menambah ke keranjang. */
+  slug: string
   name: string
   /** Tautan ke halaman detail produk. */
   href: string
@@ -24,8 +26,8 @@ export type ProductCardData = {
 }
 
 type ProductCardProps = ProductCardData & {
-  cartHref: string
   addToCartLabel: string
+  addedLabel: string
   favoriteLabel: string
   className?: string
 }
@@ -34,6 +36,7 @@ const MAX_RATING = 5
 
 /** Kartu produk dengan latar yang melebar dan tombol keranjang yang muncul saat hover (`catagory-product-card-2`). */
 export function ProductCard({
+  slug,
   name,
   href,
   image,
@@ -43,8 +46,8 @@ export function ProductCard({
   discountLabel,
   rating,
   active,
-  cartHref,
   addToCartLabel,
+  addedLabel,
   favoriteLabel,
   className,
 }: ProductCardProps) {
@@ -59,8 +62,8 @@ export function ProductCard({
         className
       )}
     >
-      <Link
-        href={cartHref}
+      <button
+        type="button"
         aria-label={favoriteLabel}
         className="group/heart absolute top-[15px] left-[15px] z-9 block size-10 cursor-pointer rounded-[5px] bg-heading text-center leading-10 transition-all duration-400 ease-in-out hover:bg-white group-data-active/card:bg-white"
       >
@@ -68,7 +71,7 @@ export function ProductCard({
           name="heart"
           className="text-white transition-all duration-400 ease-in-out group-hover/heart:text-theme-3 group-data-active/card:text-theme-3"
         />
-      </Link>
+      </button>
 
       <div className="relative z-1 h-[245px]">
         <SiteImage src={image} alt={imageAlt} className="object-contain" />
@@ -76,12 +79,16 @@ export function ProductCard({
 
       <div className="relative z-9 mt-[30px] max-sm:mt-0">
         <div className="mb-5 opacity-0 transition-all duration-400 ease-in-out group-hover/card:opacity-100 group-data-active/card:opacity-100 focus-within:opacity-100">
-          <Button asChild variant="theme-dark" size="theme-dark" className="border-0">
-            <Link href={cartHref}>
-              <Icon name="shopping-basket" className="mr-2.5 text-[17px]" />
-              {addToCartLabel}
-            </Link>
-          </Button>
+          <AddToCartButton
+            slug={slug}
+            addedLabel={addedLabel}
+            variant="theme-dark"
+            size="theme-dark"
+            className="border-0"
+          >
+            <Icon name="shopping-basket" className="mr-2.5 text-[17px]" />
+            {addToCartLabel}
+          </AddToCartButton>
         </div>
 
         <div className="mb-2.5 flex items-center justify-center gap-2.5">

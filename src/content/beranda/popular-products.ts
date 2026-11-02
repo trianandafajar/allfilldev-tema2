@@ -1,95 +1,47 @@
 import type { PopularProductsSectionProps } from "@/components/sections/home/popular-products-section"
+import { products } from "@/content/toko/products"
+import { formatRupiah } from "@/lib/format"
+
+/** Urutan produk di beranda; data diambil dari katalog Toko. */
+const featuredSlugs = [
+  "roti-isi-daging-sapi",
+  "burger-daging-jumbo",
+  "pasta-oriental",
+  "pizza-keju-spesial",
+  "paket-combo-hemat",
+  "roti-isi-ayam-crispy",
+  "ayam-panggang",
+  "burger-keju-lezat",
+] as const
+
+/** Kartu yang tampil menyala (seperti saat hover) pada template. */
+const activeSlug = "burger-daging-jumbo"
+
+const featured = featuredSlugs.map((slug) => {
+  const item = products.find((p) => p.slug === slug)
+  if (!item) throw new Error(`Produk "${slug}" tidak ada di katalog Toko`)
+  return item
+})
 
 /** Menu favorit. Harga diskon = harga normal dikurangi 5%. */
 export const popularProductsContent: PopularProductsSectionProps = {
   eyebrow: "Renyah di Setiap Gigitan",
   title: "Menu Favorit",
-  cartHref: "/keranjang",
   addToCartLabel: "Tambah ke Keranjang",
+  addedLabel: "Ditambahkan ke keranjang",
   favoriteLabel: "Simpan ke favorit",
   viewMoreLabel: "Lihat Selengkapnya",
-  viewMoreHref: "/menu",
-  products: [
-    {
-      name: "Roti Isi Daging Sapi",
-      href: "/menu/roti-isi-daging-sapi",
-      image: "food/beef-ruti.png",
-      imageAlt: "Roti isi irisan daging sapi",
-      discountLabel: "-5%",
-      price: "Rp42.750",
-      originalPrice: "Rp45.000",
-      rating: 4,
-    },
-    {
-      name: "Burger Daging Jumbo",
-      href: "/menu/burger-daging-jumbo",
-      image: "food/burger-2.png",
-      imageAlt: "Burger daging jumbo dengan sayuran segar",
-      discountLabel: "-5%",
-      price: "Rp55.100",
-      originalPrice: "Rp58.000",
-      rating: 4,
-      active: true,
-    },
-    {
-      name: "Pasta Oriental",
-      href: "/menu/pasta-oriental",
-      image: "food/pasta-2.png",
-      imageAlt: "Semangkuk pasta gaya oriental",
-      discountLabel: "-5%",
-      price: "Rp49.400",
-      originalPrice: "Rp52.000",
-      rating: 4,
-    },
-    {
-      name: "Pizza Keju Spesial",
-      href: "/menu/pizza-keju-spesial",
-      image: "food/pizza-3.png",
-      imageAlt: "Pizza keju dengan topping lengkap",
-      discountLabel: "-5%",
-      price: "Rp68.400",
-      originalPrice: "Rp72.000",
-      rating: 4,
-    },
-    {
-      name: "Paket Combo Hemat",
-      href: "/menu/paket-combo-hemat",
-      image: "food/main-food-2.png",
-      imageAlt: "Paket makanan cepat saji berisi burger, kentang goreng, dan minuman",
-      discountLabel: "-5%",
-      price: "Rp80.750",
-      originalPrice: "Rp85.000",
-      rating: 4,
-    },
-    {
-      name: "Roti Isi Ayam Crispy",
-      href: "/menu/roti-isi-ayam-crispy",
-      image: "food/ruti.png",
-      imageAlt: "Roti isi ayam goreng renyah",
-      discountLabel: "-5%",
-      price: "Rp40.850",
-      originalPrice: "Rp43.000",
-      rating: 4,
-    },
-    {
-      name: "Ayam Panggang",
-      href: "/menu/ayam-panggang",
-      image: "food/grilled-2.png",
-      imageAlt: "Ayam panggang berbumbu",
-      discountLabel: "-5%",
-      price: "Rp61.750",
-      originalPrice: "Rp65.000",
-      rating: 4,
-    },
-    {
-      name: "Burger Keju Lezat",
-      href: "/menu/burger-keju-lezat",
-      image: "food/delicious-burger.png",
-      imageAlt: "Burger keju lezat dengan saus spesial",
-      discountLabel: "-5%",
-      price: "Rp46.550",
-      originalPrice: "Rp49.000",
-      rating: 4,
-    },
-  ],
+  viewMoreHref: "/toko",
+  products: featured.map((item) => ({
+    slug: item.slug,
+    name: item.name,
+    href: `/menu/${item.slug}`,
+    image: item.image,
+    imageAlt: item.imageAlt,
+    discountLabel: "-5%",
+    price: formatRupiah(item.price),
+    originalPrice: formatRupiah(item.originalPrice),
+    rating: item.rating,
+    ...(item.slug === activeSlug ? { active: true } : {}),
+  })),
 }

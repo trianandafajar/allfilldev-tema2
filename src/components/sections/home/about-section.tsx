@@ -28,6 +28,8 @@ export type AboutSectionProps = {
   ctaHref: string
   quoteName: string
   quote: string
+  /** Padding vertikal section. Di Beranda section ini menyambung ke atasnya (`no-top`); di halaman sendiri pakai `default`. */
+  padding?: "default" | "no-top"
 }
 
 /** Jeda animasi muncul per fitur (padanan `data-wow-delay`). */
@@ -49,9 +51,10 @@ export function AboutSection({
   ctaHref,
   quoteName,
   quote,
+  padding = "no-top",
 }: AboutSectionProps) {
   return (
-    <Section surface padding="no-top">
+    <Section surface padding={padding}>
       <Container>
         <div className="grid grid-cols-12 items-center gap-x-6">
           <Reveal delay={0.3} className="col-span-12 lg:col-span-6">

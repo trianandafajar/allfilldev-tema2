@@ -9,8 +9,8 @@ export type PopularProductsSectionProps = {
   eyebrow: string
   title: string
   products: ProductCardData[]
-  cartHref: string
   addToCartLabel: string
+  addedLabel: string
   favoriteLabel: string
   viewMoreLabel: string
   viewMoreHref: string
@@ -23,8 +23,8 @@ export function PopularProductsSection({
   eyebrow,
   title,
   products,
-  cartHref,
   addToCartLabel,
+  addedLabel,
   favoriteLabel,
   viewMoreLabel,
   viewMoreHref,
@@ -45,8 +45,8 @@ export function PopularProductsSection({
             >
               <ProductCard
                 {...product}
-                cartHref={cartHref}
                 addToCartLabel={addToCartLabel}
+                addedLabel={addedLabel}
                 favoriteLabel={favoriteLabel}
               />
             </Reveal>

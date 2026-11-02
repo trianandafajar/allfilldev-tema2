@@ -29,7 +29,6 @@ export function SiteHeader() {
     <header className="bg-surface">
       <HeaderTopBar
         notice={topBar.notice}
-        trackOrder={topBar.trackOrder}
         searchLabel={topBar.searchLabel}
         searchPlaceholder={topBar.searchPlaceholder}
         social={topBarSocialLinks}

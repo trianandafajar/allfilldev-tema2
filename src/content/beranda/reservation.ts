@@ -22,6 +22,6 @@ export const reservationContent = {
     },
     phone: { label: "Nomor telepon", placeholder: "Nomor telepon" },
     date: { label: "Tanggal reservasi" },
-    submit: { label: "Pesan Sekarang", href: "/reservasi" },
+    submit: { label: "Pesan Sekarang", href: "/kontak" },
   },
 } satisfies ReservationSectionProps

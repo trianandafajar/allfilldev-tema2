@@ -1,21 +1,18 @@
-import Link from "next/link"
 import { Container } from "@/components/common/container"
 import { Icon } from "@/components/common/icon"
 import { SocialLinks } from "./social-links"
-import type { LinkItem, SocialLink } from "./types"
+import type { SocialLink } from "./types"
 
 type HeaderTopBarProps = {
   notice: { highlight: string; text: string }
-  trackOrder: LinkItem
   searchLabel: string
   searchPlaceholder: string
   social: readonly SocialLink[]
 }
 
-/** Bilah atas header: pemberitahuan, lacak pesanan, kotak cari, dan ikon sosial. Tersembunyi di bawah `lg`. */
+/** Bilah atas header: pemberitahuan, kotak cari, dan ikon sosial. Tersembunyi di bawah `lg`. */
 export function HeaderTopBar({
   notice,
-  trackOrder,
   searchLabel,
   searchPlaceholder,
   social,
@@ -28,12 +25,6 @@ export function HeaderTopBar({
             <li className="text-base font-medium text-heading">
               <span className="text-theme-2">{notice.highlight}</span>{" "}
               {notice.text}
-            </li>
-            <li className="text-base font-medium text-heading">
-              <Link href={trackOrder.href}>
-                <Icon name="truck" family="solid" className="mr-[5px] text-theme-2" />
-                {trackOrder.label}
-              </Link>
             </li>
           </ul>
           <div className="flex items-center border-l border-line pl-[25px]">

@@ -30,6 +30,22 @@ Tidak ada package tambahan; semua memakai fitur bawaan Next.
 3. Di `page.tsx` export `metadata` berisi `title`, `description`, dan `alternates: { canonical: "/path" }`. Title otomatis diberi akhiran nama situs.
 4. Halaman yang tidak boleh diindeks (login, dashboard): jangan masukkan ke `sitePages`, dan set `robots: { index: false }` pada metadata-nya.
 
+## Halaman produk dan keranjang
+
+- `sitePages` menambahkan satu entri `/menu/<slug>` per produk di katalog (`src/content/toko/products.ts`), jadi produk baru otomatis masuk sitemap dan llms.txt.
+- Detail produk memakai `generateMetadata` (title = nama produk, canonical `/menu/<slug>`) dan JSON-LD `Product` dengan `offers`. Tidak ada `aggregateRating`/`review` karena ulasan di halaman hanya contoh; tambahkan setelah ulasan nyata ada.
+- `/keranjang` bersifat transaksional: `robots: { index: false, follow: true }` dan tidak didaftarkan di `sitePages`.
+
+## Halaman konten
+
+- Terdaftar di `sitePages`: `/blog`, setiap `/blog/<slug>` (diturunkan dari `src/content/blog/posts.ts`), `/tentang-kami`, `/tim`, `/galeri`, `/faq`, `/kontak`, `/kebijakan-privasi`, `/syarat-ketentuan`. Metadata tiap halaman (title, description) diambil dari objek `metadata` di file kontennya, jadi sitemap, llms.txt, dan `<head>` selalu sama.
+- Detail artikel memakai `generateMetadata` (Open Graph `article`) dan JSON-LD `BlogPosting`. Tanpa `aggregateRating`, tanpa komentar.
+- `/faq` menyertakan JSON-LD `FAQPage` dari daftar tanya-jawab di `src/content/faq/faq-page.ts` (jawaban teks biasa, sama dengan yang tampil).
+- `/checkout` bersifat transaksional: `robots: { index: false, follow: true }` dan tidak ada di `sitePages`, seperti `/keranjang`.
+- `src/app/not-found.tsx` memakai `robots: { index: false }`.
+- Teks `/kebijakan-privasi` dan `/syarat-ketentuan` adalah draf umum; tinjau sebelum production.
+- Hindari impor `siteConfig` dari file di `src/content/`: `src/config/site.ts` mengimpor konten untuk `sitePages`, sehingga impor balik membuat siklus (build gagal dengan "Cannot access ... before initialization").
+
 ## Keputusan dan batasan
 
 - **Sitemap tanpa `lastModified`.** Dengan `cacheComponents: true`, `new Date()` saat prerender membuat build gagal (contoh di doc Next memakainya, tapi tidak berlaku di setup ini). Isi `lastModified` hanya dari data nyata, mis. `updatedAt` konten dari database.
@@ -45,7 +61,7 @@ Tidak ada package tambahan; semua memakai fitur bawaan Next.
 - [ ] **OG image** (`opengraph-image.tsx` atau file statis di `src/app/`), agar `twitter:card` di layout punya gambar. Baca `opengraph-image.md` di docs Next.
 - [ ] **Warna/logo brand** di `Organization` JSON-LD (`logo`, `sameAs` untuk profil sosial).
 - [ ] **Search Console / Bing Webmaster**: verifikasi domain dan submit `sitemap.xml` setelah domain final.
-- [ ] **Skema per jenis halaman**: `Service`, `FAQPage`, `BreadcrumbList` saat halaman terkait ada.
+- [ ] **Skema per jenis halaman**: `Service`, `BreadcrumbList`. (`FAQPage` dan `BlogPosting` sudah ada.)
 - [ ] **`manifest.ts`** bila dibutuhkan (PWA).
 - [ ] **Multi-bahasa** (`alternates.languages` / hreflang) bila situs lebih dari satu bahasa. Lihat guide `internationalization.md`.
 - [ ] **Validasi** dengan Rich Results Test dan Schema Markup Validator setelah ada URL publik.

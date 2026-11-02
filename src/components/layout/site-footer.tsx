@@ -59,7 +59,7 @@ export function SiteFooter() {
 
             <Reveal
               delay={0.4}
-              className="col-span-12 sm:col-span-6 md:col-span-3 lg:col-span-3 lg:pl-9 xl:col-span-2"
+              className="col-span-12 sm:col-span-6 lg:col-span-3 lg:pl-9 xl:col-span-2"
             >
               <FooterWidget title={footerContent.quickLinks.title}>
                 <FooterLinkList links={footerContent.quickLinks.links} />
@@ -67,17 +67,8 @@ export function SiteFooter() {
             </Reveal>
 
             <Reveal
-              delay={0.6}
-              className="col-span-12 sm:col-span-6 md:col-span-3 lg:col-span-3 lg:pl-3 xl:col-span-2"
-            >
-              <FooterWidget title={footerContent.accountLinks.title}>
-                <FooterLinkList links={footerContent.accountLinks.links} />
-              </FooterWidget>
-            </Reveal>
-
-            <Reveal
               delay={0.8}
-              className="col-span-12 sm:col-span-6 lg:col-span-3 xl:col-span-2"
+              className="col-span-12 sm:col-span-6 lg:col-span-3 xl:col-span-3"
             >
               <FooterWidget title={address.title}>
                 <div>
@@ -93,7 +84,7 @@ export function SiteFooter() {
 
             <Reveal
               delay={0.9}
-              className="col-span-12 sm:col-span-6 lg:col-span-4 xl:col-span-3 xl:pl-9"
+              className="col-span-12 sm:col-span-6 lg:col-span-3 xl:col-span-4 xl:pl-9"
             >
               <FooterWidget title={app.title}>
                 <div>
@@ -121,7 +112,11 @@ export function SiteFooter() {
           </div>
         </div>
       </Container>
-      <FooterBottom copyright={footerContent.copyright} payment={footerContent.payment} />
+      <FooterBottom
+        copyright={footerContent.copyright}
+        legalLinks={footerContent.legalLinks}
+        payment={footerContent.payment}
+      />
     </footer>
   )
 }
