@@ -6,7 +6,7 @@ export const promoBannersContent: PromoBannersSectionProps = {
     right: "shape/fry-shape.png",
   },
   offer: {
-    backgroundImage: "banner/offer-bg.jpg",
+    backgroundImage: "banner/pepsi-bg.jpg",
     eyebrow: "Renyah di Setiap Gigitan",
     title: ["Super", "Lezat"],
     badge: { src: "offer/50percent-off.png", alt: "Diskon 50 persen" },

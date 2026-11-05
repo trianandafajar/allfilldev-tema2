@@ -6,5 +6,5 @@ export const ctaBannerContent = {
     ["Tantangan ", { accent: "Pengiriman" }],
     "Cepat 30 Menit",
   ],
-  image: { src: "delivery-man-2.png" },
+  image: { src: "delivery-man.png" },
 } satisfies CtaBannerSectionProps

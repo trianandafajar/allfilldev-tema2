@@ -28,7 +28,7 @@ export const comboOfferContent: ComboOfferSectionProps = {
     },
   ],
   showcase: {
-    background: "banner/comboo-bg.jpg",
+    background: "banner/pizza-bg.jpg",
     textImage: "shape/combo-pizza-text.png",
     foodImage: "food/big-pizza.png",
     foodAlt: "Pizza besar dengan topping lengkap",

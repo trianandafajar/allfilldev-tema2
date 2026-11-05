@@ -81,7 +81,7 @@ export function OfferBanner({
       style={{ backgroundImage: `url(/images/${backgroundImage})` }}
     >
       <div className={cn("relative z-99", styles.content)}>
-        <h5 className="mb-[5px] font-bold text-theme-2">{eyebrow}</h5>
+        <h5 className="mb-[5px] font-bold text-theme-3">{eyebrow}</h5>
         <h3 className={cn("text-white", styles.title)}>
           {title.map((line, index) => (
             <Fragment key={line}>

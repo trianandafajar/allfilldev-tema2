@@ -4,7 +4,7 @@ import { Section } from "@/components/common/section"
 import { SectionTitle } from "@/components/common/section-title"
 import { ShapeImage } from "@/components/common/shape-image"
 import { OfferTab, type OfferTabData } from "@/components/cards/offer-tab"
-import { Tabs, TabsContent, TabsList } from "@/components/ui/tabs"
+import { Tabs, TabsList } from "@/components/ui/tabs"
 import { ComboShowcase, type ComboShowcaseData } from "./combo-showcase"
 import { TitleAccent } from "./title-accent"
 
@@ -72,15 +72,7 @@ export function ComboOfferSection({
                 </div>
               </div>
               <div className="col-span-12 xl:col-span-6">
-                {offers.map((offer) => (
-                  <TabsContent
-                    key={offer.value}
-                    value={offer.value}
-                    className="flex-none animate-in text-[18px] duration-150 ease-linear fade-in-0 data-[state=inactive]:animate-out data-[state=inactive]:fade-out-0"
-                  >
-                    <ComboShowcase {...showcase} />
-                  </TabsContent>
-                ))}
+                <ComboShowcase {...showcase} />
               </div>
             </div>
           </div>

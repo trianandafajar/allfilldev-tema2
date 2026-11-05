@@ -35,8 +35,8 @@ export function CtaBannerSection({ eyebrow, title, image }: CtaBannerSectionProp
           </SectionTitle>
           <ShapeImage
             src={image.src}
-            className="right-[15%] -bottom-[30%] max-2xl:right-[22%] max-2xl:-bottom-[55%] max-2xl:w-[400px] max-xl:w-[350px] max-lg:hidden"
-            imageClassName="max-2xl:size-full"
+            className="right-[15%] -bottom-[45%] w-[470px] max-2xl:right-[22%] max-2xl:-bottom-[60%] max-2xl:w-[440px] max-xl:right-[10%] max-xl:w-[360px] max-lg:hidden"
+            imageClassName="size-full"
           />
         </div>
       </Container>

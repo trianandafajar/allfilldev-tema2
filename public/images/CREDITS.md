@@ -12,10 +12,8 @@ Potongan makanan dibuat dengan menghapus latar foto (rembg), lalu dipasang pada 
 | `about/burger.png` | José Pérez (Artesano) | https://www.pexels.com/photo/31190336/ | potongan, latar dihapus dengan rembg |
 | `banner/breadcrumb.jpg` | Austin Guevara | https://www.pexels.com/photo/237898/ | dipangkas ke ukuran target |
 | `banner/burger-bg.jpg` | FWStudio | https://www.pexels.com/photo/172291/ | dipangkas ke ukuran target |
-| `banner/comboo-bg.jpg` | Allec Gomes | https://www.pexels.com/photo/5218431/ | dipangkas ke ukuran target |
 | `banner/main-bg.jpg` | Template Foodking React (demo) | https://foodking-react.vercel.app/assets/img/banner/main-bg.jpg | dipasang atas permintaan pemilik proyek |
 | `banner/main-cta-bg-2.jpg` | Dmitry Demidov | https://www.pexels.com/photo/3800420/ | dipangkas ke ukuran target |
-| `banner/offer-bg.jpg` | FWStudio | https://www.pexels.com/photo/122458/ | dipangkas ke ukuran target |
 | `banner/pepsi-bg.jpg` | Tima Miroshnichenko | https://www.pexels.com/photo/5912576/ | dipangkas ke ukuran target |
 | `banner/pizza-bg.jpg` | Josh Sorenson | https://www.pexels.com/photo/103589/ | dipangkas ke ukuran target |
 | `bg-image/bg.jpg` | Heather Green | https://www.pexels.com/photo/20010376/ | dipangkas ke ukuran target |
@@ -29,7 +27,6 @@ Potongan makanan dibuat dengan menghapus latar foto (rembg), lalu dipasang pada 
 | `client/01.jpg` | RDNE Stock project | https://www.pexels.com/photo/a-man-in-black-suit-wearing-eyeglasses-7845231/ | dipangkas ke ukuran target |
 | `client/02.jpg` | Felicity Tai | https://www.pexels.com/photo/portrait-of-woman-with-cupcakes-box-7966516/ | dipangkas ke ukuran target |
 | `client/03.jpg` | Mikhail Nilov | https://www.pexels.com/photo/man-in-white-long-sleeve-shirt-holding-gray-digital-tablet-7988126/ | dipangkas ke ukuran target |
-| `delivery-man-2.png` | Norma Mortenson | https://www.pexels.com/photo/4393437/ | potongan, latar dihapus dengan rembg |
 | `delivery-man.png` | RDNE Stock project | https://www.pexels.com/photo/7362948/ | potongan, latar dihapus dengan rembg |
 | `food/ayam-krispi.png` | Gonzalo Ruiz | https://www.pexels.com/photo/12118980/ | potongan, latar dihapus dengan rembg |
 | `food/beef-ruti.png` | Rajesh TP | https://www.pexels.com/photo/1633495/ | potongan, latar dihapus dengan rembg |
